@@ -12,6 +12,7 @@ interface ApiResponse {
 function App() {
   const [modelVersion, setModelVersion] = useState('');
   const [apiToken, setApiToken] = useState('');
+  const [prompt, setPrompt] = useState('a baby riding a bicycle in a field of flowers');
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +32,7 @@ function App() {
             api_token: apiToken
           },
           body: JSON.stringify({
-            prompt: 'a baby riding a bicycle in a field of flowers',
+            prompt,
             num_results: 1,
             sync: true
           })
@@ -94,6 +95,20 @@ function App() {
                   onChange={(e) => setApiToken(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Enter API token"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="prompt" className="block text-sm font-medium text-gray-700 mb-1">
+                  Image Description
+                </label>
+                <textarea
+                  id="prompt"
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 min-h-[100px]"
+                  placeholder="Describe the image you want to generate..."
                   required
                 />
               </div>
