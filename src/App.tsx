@@ -24,12 +24,12 @@ function App() {
 
     try {
       const response = await fetch(
-        `https://engine.prod.bria-api.com/v1/text-to-image/base/${modelVersion}`,
+        `https://engine.prod.bria-api.com/v1/text-to-image/base/2.3`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            api_token: apiToken
+            api_token: '6b05b6c048bd47f094fa4100ed714e89'
           },
           body: JSON.stringify({
             prompt,
