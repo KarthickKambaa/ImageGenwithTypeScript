@@ -11,7 +11,7 @@ interface ApiResponse {
 
 function App() {
   const modelVersion = '2.3';
-  const apiToken = 'apikeykarthick';
+  const apiToken = '6b05b6c048bd47f094fa4100ed714e89';
   const [prompt, setPrompt] = useState('a baby riding a bicycle in a field of flowers');
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
