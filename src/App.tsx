@@ -10,8 +10,8 @@ interface ApiResponse {
 }
 
 function App() {
-  const [modelVersion, setModelVersion] = useState('');
-  const [apiToken, setApiToken] = useState('');
+  const modelVersion = '2.3';
+  const apiToken = 'apikeykarthick';
   const [prompt, setPrompt] = useState('a baby riding a bicycle in a field of flowers');
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -69,36 +69,6 @@ function App() {
           {/* Left side - Form */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="modelVersion" className="block text-sm font-medium text-gray-700 mb-1">
-                  Model Version
-                </label>
-                <input
-                  id="modelVersion"
-                  type="text"
-                  value={modelVersion}
-                  onChange={(e) => setModelVersion(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Enter model version"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="apiToken" className="block text-sm font-medium text-gray-700 mb-1">
-                  API Token
-                </label>
-                <input
-                  id="apiToken"
-                  type="password"
-                  value={apiToken}
-                  onChange={(e) => setApiToken(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Enter API token"
-                  required
-                />
-              </div>
-
               <div>
                 <label htmlFor="prompt" className="block text-sm font-medium text-gray-700 mb-1">
                   Image Description
